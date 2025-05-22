@@ -1,29 +1,46 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Interactive Web Page</title>
-    <link rel="stylesheet" href="coding.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Page</title>
+  <link rel="stylesheet" href="coding.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <h1>Welcome to the Interactive Web Experience!</h1>
-    
-    <button id="myButton">Click Here to Reveal a Message</button>
-    
-    <p id="messageParagraph"></p>
-    
-    
-    <script>
-      function displayMessage() {
-          const para = document.getElementById('messageParagraph');
-          para.textContent = "🎉 Congratulations! You've successfully clicked the button. Enjoy exploring the interactive effects and styles.";
-          para.classList.add('show-message');
-      }
-      
-      document.getElementById('myButton').addEventListener('click', displayMessage);
-    </script>
-    <script src="coding.js"></script>
+ <div class="box">
+  <div class="slideshow-container">
+    <img class="slide active" src="john-murphey-z1FYBSg6Zto-unsplash.jpg " alt="Slide 1" />
+    <img class="slide" src="pramod-tiwari-qxhrOLO52os-unsplash.jpg " alt="Slide 2" />
+    <img class="slide" src="grigorii-shcheglov-MIkgwqBcNm4-unsplash.jpg " alt="Slide 3" />
+     <img class="slide" src=" pesce-huang-fMTXyPxmFnk-unsplash.jpg " alt="Slide 4" />
+      <img class="slide" src="  sir-simo-PHvVmLjzf84-unsplash.jpg " alt="Slide 5" />
+      <img class="slide" src=" danny-greenberg-Kcll3JDOAwE-unsplash.jpg " alt="Slide 6" />
+     
+  </div>
 
+  <h1>Hello Teacher 👋</h1>
+  <p id="paragraph">Click the button to see a message appear here!</p>
+  <button onclick="displayMessage()">Click Me!</button>
+</div>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Start slideshow, change every 2 seconds
+setInterval(nextSlide, 3000);
+</script>
+  <script src="coding.js"></script>
 </body>
 </html>

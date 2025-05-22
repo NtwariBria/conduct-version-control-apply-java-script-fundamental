@@ -1,9 +1,21 @@
-// script.js
+ function displayMessage() {
+  document.getElementById("paragraph").innerText = "🔥 You did it! Welcome to my awesome web page!";
+}
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
-function displayMessage() {
-    const para = document.getElementById('messageParagraph');
-    para.textContent = "🎉 Congratulations! You've successfully clicked the button. Enjoy exploring the interactive effects and styles.";
-    para.classList.add('show-message');
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
 }
 
-document.getElementById('myButton').addEventListener('click', displayMessage);
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+// Start slideshow, change every 3 seconds
+setInterval(nextSlide, 3000);
+
+
