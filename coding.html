@@ -1,0 +1,29 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Web Page</title>
+    <link rel="stylesheet" href="coding.css" />
+</head>
+<body>
+    <h1>Welcome to the Interactive Web Experience!</h1>
+    
+    <button id="myButton">Click Here to Reveal a Message</button>
+    
+    <p id="messageParagraph"></p>
+    
+    
+    <script>
+      function displayMessage() {
+          const para = document.getElementById('messageParagraph');
+          para.textContent = "🎉 Congratulations! You've successfully clicked the button. Enjoy exploring the interactive effects and styles.";
+          para.classList.add('show-message');
+      }
+      
+      document.getElementById('myButton').addEventListener('click', displayMessage);
+    </script>
+    <script src="coding.js"></script>
+
+</body>
+</html>

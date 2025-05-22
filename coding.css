@@ -1,0 +1,73 @@
+ /* Dark gradient background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Heading style */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Green stylish button */
+button {
+    padding: 15px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #28a745; /* Bright green */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(40, 167, 69, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #218838; /* Darker green */
+    box-shadow: 0 10px 20px rgba(33, 136, 56, 0.6);
+}
+
+/* Button click effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Paragraph style */
+p {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Show paragraph with fade-in and color animation */
+p.show-message {
+    opacity: 1;
+    animation: colorShift 4s infinite alternate;
+}
+
+/* Color animation keyframes */
+@keyframes colorShift {
+    0% {
+        color: #ffffff;
+    }
+    50% {
+        color: #90ee90; /* light green */
+    }
+    100% {
+        color: #28a745; /* bright green */
+    }
+}
